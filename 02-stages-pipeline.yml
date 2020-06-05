@@ -36,5 +36,16 @@ stages:
     - job: SecondJob
       steps:
       - bash: echo 'First Job'
+  - stage: ProdDeploy
+    dependsOn:
+      - QADeploy
+      - DevDeploy
+    jobs:
+    - job: FirstJob
+      steps:
+      - bash: echo 'First Job'
+    - job: SecondJob
+      steps:
+      - bash: echo 'First Job'
   
   
