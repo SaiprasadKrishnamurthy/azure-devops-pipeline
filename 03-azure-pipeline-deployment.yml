@@ -15,9 +15,9 @@ stages:
     - job: Build
       steps:
       - bash: echo 'Building...'
-    - job: Deploy
-      steps:
-        - bash: echo 'Pre deploy'
+  - stage: DevDeploy  
+    jobs:
+    - job: DevDeploy
     - deployment: DevDeploy
       environment: Dev
       strategy:
@@ -25,3 +25,14 @@ stages:
           deploy:
             steps:
               - bash: echo 'Deploying to Dev'
+  - stage: QADeploy  
+    jobs:
+    - job: QADeploy
+    - deployment: QADeploy
+      environment: QA
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+              - bash: echo 'Deploying to QA'
+  
