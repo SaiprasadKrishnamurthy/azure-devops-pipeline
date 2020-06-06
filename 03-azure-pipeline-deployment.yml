@@ -19,6 +19,7 @@ stages:
       steps:
         - bash: echo 'Pre deploy'
     - deployment: DevDeploy
+      environment: Dev
       strategy:
         runOnce:
           deploy:
