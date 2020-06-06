@@ -29,7 +29,7 @@ stages:
       - bash: echo 'Build no.. ${Build.BuildNumber}'
       - bash: echo 'Build Id.. ${Build.BuildId}'
       - bash: echo 'Build Src Branch name.. ${Build.SourceBranchName}'
-      - bash: ls -R ${Build.DefaultWorkingDirectory}'
+      - bash: ls -R ${Build.DefaultWorkingDirectory}
       - bash: echo 'Build Stg Dir.. ${Build.ArtifactStagingDirectory}'
     - job: SecondJob
       steps:
