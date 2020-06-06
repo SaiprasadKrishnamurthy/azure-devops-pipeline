@@ -31,7 +31,7 @@ stages:
       - bash: echo 'Build Src Branch name.. ${Build.SourceBranchName}'
       - bash: echo 'Build Stg Dir.. ${Build.ArtifactStagingDirectory}'
       - bash: java -version
-      - bash: go --version
+      - bash: go version
       - bash: node --version
     - job: SecondJob
       steps:
